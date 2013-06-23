@@ -81,7 +81,7 @@ describe "Authentication" do
             end
 
             it "should render the default (profile) page" do
-              page.should have_selector('title', text: user.name)
+              page.should have_title(user.name)
             end
           end
         end
@@ -116,7 +116,7 @@ describe "Authentication" do
 
       describe "visiting Users#edit page" do
         before { visit edit_user_path(wrong_user) }
-        it { should_not have_selector('title', text: full_title('Edit user')) }
+        it { should_not have_title(full_title('Edit user')) }
       end
     end
 
