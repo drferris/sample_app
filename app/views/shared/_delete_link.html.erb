@@ -1,0 +1,9 @@
+<span class="content"><%= wrap((type).content) %></span>
+<span class="timestamp">
+	Posted <%= time_ago_in_words((type).created_at) %> ago.
+</span>
+<% if current_user?((type).user) %>
+	<%= link_to "delete", (type), method: :delete,
+                                 	data: { confirm: "You sure?" },
+                                 	title: (type).content %>
+<% end %>
